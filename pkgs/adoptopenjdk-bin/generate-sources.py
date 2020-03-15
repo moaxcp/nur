@@ -6,7 +6,7 @@ import re
 import requests
 import sys
 
-releases = ("openjdk8", "openjdk11", "openjdk12", "openjdk13")
+releases = ("openjdk8", "openjdk11", "openjdk13")
 nightlyBuilds = ("openjdk14",)
 oses = ("mac", "linux")
 types = ("jre", "jdk")
