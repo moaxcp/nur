@@ -10,21 +10,20 @@
 let
   gradleGen = pkgs.callPackage ./pkgs/gradle {
       java = pkgs.jdk;
-    };
-in
+  };
+in with pkgs;
 rec {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  gradle = gradleGen.gradle_latest;
-  gradle_4_10_3 = gradleGen.gradle_4_10_3;
-  gradle_5_6_4 = gradleGen.gradle_5_6_4;
-  gradle_6_2_2 = gradleGen.gradle_6_2_2;
+  gradle-4_10_3 = gradleGen.gradle-4_10_3;
+  gradle-5_6_4 = gradleGen.gradle-5_6_4;
+  gradle-6_2_2 = gradleGen.gradle-6_2_2;
 
-  micronaut = pkgs.callPackage ./pkgs/micronaut { };
+  micronaut-1_3_3 = pkgs.callPackage ./pkgs/micronaut { };
 
-  spring-boot-cli = pkgs.callPackage ./pkgs/spring-boot-cli { };
+  spring-boot-cli-2_2_5 = pkgs.callPackage ./pkgs/spring-boot-cli { };
 }
 
