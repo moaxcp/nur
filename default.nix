@@ -18,12 +18,49 @@ rec {
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
+
+  adoptopenjdk-bin-11-packages-linux = import ./pkgs/adoptopenjdk-bin/jdk11-linux.nix;
+  adoptopenjdk-bin-11-packages-darwin = import ./pkgs/adoptopenjdk-bin/jdk11-darwin.nix;
+
+  adoptopenjdk-hotspot-bin-11 = if stdenv.isLinux
+    then callPackage adoptopenjdk-bin-11-packages-linux.jdk-hotspot {}
+    else callPackage adoptopenjdk-bin-11-packages-darwin.jdk-hotspot {};
+  adoptopenjdk-jre-hotspot-bin-11 = if stdenv.isLinux
+    then callPackage adoptopenjdk-bin-11-packages-linux.jre-hotspot {}
+    else callPackage adoptopenjdk-bin-11-packages-darwin.jre-hotspot {};
+
+  adoptopenjdk-openj9-bin-11 = if stdenv.isLinux
+    then callPackage adoptopenjdk-bin-11-packages-linux.jdk-openj9 {}
+    else callPackage adoptopenjdk-bin-11-packages-darwin.jdk-openj9 {};
+
+  adoptopenjdk-jre-openj9-bin-11 = if stdenv.isLinux
+    then callPackage adoptopenjdk-bin-11-packages-linux.jre-openj9 {}
+    else callPackage adoptopenjdk-bin-11-packages-darwin.jre-openj9 {};
+
+  adoptopenjdk-bin-8-packages-linux = import ./pkgs/adoptopenjdk-bin/jdk8-linux.nix;
+  adoptopenjdk-bin-8-packages-darwin = import ./pkgs/adoptopenjdk-bin/jdk8-darwin.nix;
+
+  adoptopenjdk-hotspot-bin-8 = if stdenv.isLinux
+    then callPackage adoptopenjdk-bin-8-packages-linux.jdk-hotspot {}
+    else callPackage adoptopenjdk-bin-8-packages-darwin.jdk-hotspot {};
+  adoptopenjdk-jre-hotspot-bin-8 = if stdenv.isLinux
+    then callPackage adoptopenjdk-bin-8-packages-linux.jre-hotspot {}
+    else callPackage adoptopenjdk-bin-8-packages-darwin.jre-hotspot {};
+
+  adoptopenjdk-openj9-bin-8 = if stdenv.isLinux
+    then callPackage adoptopenjdk-bin-8-packages-linux.jdk-openj9 {}
+    else callPackage adoptopenjdk-bin-8-packages-darwin.jdk-openj9 {};
+
+  adoptopenjdk-jre-openj9-bin-8 = if stdenv.isLinux
+    then callPackage adoptopenjdk-bin-8-packages-linux.jre-openj9 {}
+    else callPackage adoptopenjdk-bin-8-packages-darwin.jre-openj9 {};
+
   gradle-4_10_3 = gradleGen.gradle-4_10_3;
   gradle-5_6_4 = gradleGen.gradle-5_6_4;
   gradle-6_2_2 = gradleGen.gradle-6_2_2;
 
-  micronaut-1_3_3 = pkgs.callPackage ./pkgs/micronaut { };
+  micronaut-1_3_3 = callPackage ./pkgs/micronaut { };
 
-  spring-boot-cli-2_2_5 = pkgs.callPackage ./pkgs/spring-boot-cli { };
+  spring-boot-cli-2_2_5 = callPackage ./pkgs/spring-boot-cli { };
 }
 
