@@ -6,3 +6,6 @@
 [![Cachix Cache](https://img.shields.io/badge/cachix-moaxcp-blue.svg)](https://moaxcp.cachix.org)
 
 
+#Notes
+
+Gradle doesn't seem to have pname which I believe is a required convention in nixpkgs
