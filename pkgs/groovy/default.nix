@@ -48,4 +48,12 @@ rec {
             sha256 = "0zqcvi423gkkns7jksna0pvkjihp79wnagyn5v3k76g5pkzzx3bk";
         };
     };
+
+    groovy-2_4_19 = groovyGen rec {
+        version = "2.4.19";
+        src = fetchurl {
+            url = "https://dl.bintray.com/groovy/maven/apache-groovy-binary-${version}.zip";
+            sha256 = "127bz4z0rvz5q9crvm9nmh0b03lg54ysr5i9sp655vl173j7wl94";
+        };
+    };
 }
