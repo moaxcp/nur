@@ -14,8 +14,8 @@ let
   groovyGen = pkgs.callPackage ./pkgs/groovy {
       java = pkgs.jdk;
   };
-in with pkgs;
-rec {
+  callPackage = pkgs.callPackage;
+in rec {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
