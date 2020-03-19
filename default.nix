@@ -15,6 +15,7 @@ let
       java = pkgs.jdk;
   };
   callPackage = pkgs.callPackage;
+  stdenv = pkgs.stdenv;
 in rec {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib { inherit pkgs; }; # functions
