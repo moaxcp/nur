@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, unzip, which, makeWrapper, jdk, java ? jdk }:
+{ stdenv, fetchurl, unzip, which, makeWrapper, jdk, java ? jdk, coreutils, gawk }:
 
 rec {
     groovyGen = {version, src} : stdenv.mkDerivation {
@@ -20,7 +20,7 @@ rec {
         for p in grape java2groovy groovy{,doc,c,sh,Console}; do
           wrapProgram $out/bin/$p \
                 --set JAVA_HOME "${jdk}" \
-                --prefix PATH ":" "${jdk}/bin"
+                --set PATH "${gawk}/bin:${coreutils}/bin:${jdk}/bin"
         done
       '';
 
