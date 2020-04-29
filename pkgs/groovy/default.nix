@@ -33,11 +33,27 @@ rec {
       };
     };
 
+    groovy-3_0_3 = groovyGen rec {
+        version = "3.0.3";
+        src = fetchurl {
+            url = "https://dl.bintray.com/groovy/maven/apache-groovy-binary-${version}.zip";
+            sha256 = "0xdm70b61pdj8z3g08az16y9b6cpz5hv7iwvwfyfyxrjdi47h419";
+        };
+    };
+
     groovy-3_0_2 = groovyGen rec {
         version = "3.0.2";
         src = fetchurl {
             url = "https://dl.bintray.com/groovy/maven/apache-groovy-binary-${version}.zip";
             sha256 = "1ddw3fqrmwh4w6z6xgck4jhmq33rwgbmpjw07g12ri1vgw4xks9w";
+        };
+    };
+
+    groovy-2_5_11 = groovyGen rec {
+        version = "2.5.11";
+        src = fetchurl {
+            url = "https://dl.bintray.com/groovy/maven/apache-groovy-binary-${version}.zip";
+            sha256 = "1z8jmc0la4vcjlzcdn1nnharxpq9b3sv2q3ypbjw51nd03pc8qxr";
         };
     };
 
