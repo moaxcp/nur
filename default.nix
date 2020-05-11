@@ -8,13 +8,9 @@
 
 { pkgs ? import <nixpkgs> {} }:
 let
-  gradleGen = pkgs.callPackage ./pkgs/gradle {
-      java = pkgs.jdk;
-  };
-  groovyGen = pkgs.callPackage ./pkgs/groovy {
-      java = pkgs.jdk;
-  };
-  springGen = pkgs.callPackage ./pkgs/spring-boot-cli {};
+  gradleGen = pkgs.callPackage ./pkgs/gradle { };
+  groovyGen = pkgs.callPackage ./pkgs/groovy { };
+  springGen = pkgs.callPackage ./pkgs/spring-boot-cli { };
   callPackage = pkgs.callPackage;
   stdenv = pkgs.stdenv;
 in rec {
