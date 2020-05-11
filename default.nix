@@ -8,12 +8,13 @@
 
 { pkgs ? import <nixpkgs> {} }:
 let
+  callPackage = pkgs.callPackage;
+  stdenv = pkgs.stdenv;
+
   gradle = pkgs.callPackage ./pkgs/gradle { };
   groovy = pkgs.callPackage ./pkgs/groovy { };
   springBootCli = pkgs.callPackage ./pkgs/spring-boot-cli { };
   micronaut = pkgs.callPackage ./pkgs/micronaut { };
-  callPackage = pkgs.callPackage;
-  stdenv = pkgs.stdenv;
 
   adoptopenjdk-bin-8-packages-linux = import ./pkgs/adoptopenjdk-bin/jdk8-linux.nix;
   adoptopenjdk-bin-8-packages-darwin = import ./pkgs/adoptopenjdk-bin/jdk8-darwin.nix;
@@ -80,6 +81,8 @@ in rec {
 
   micronaut-1_3_4 = micronaut.micronaut-1_3_4;
   micronaut-1_3_5 = micronaut.micronaut-1_3_5;
+
+  netbeans-11_3 = callPackage ./pkgs/netbeans { };
 
   spring-boot-cli-2_2_6 = springBootCli.spring-boot-cli-2_2_6;
   spring-boot-cli-2_2_7 = springBootCli.spring-boot-cli-2_2_7;
