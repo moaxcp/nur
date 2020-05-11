@@ -74,6 +74,7 @@ in rec {
     then callPackage adoptopenjdk-bin-8-packages-linux.jre-openj9 {}
     else callPackage adoptopenjdk-bin-8-packages-darwin.jre-openj9 {};
 
+  gradle-6_4 = gradle.gradle-6_4;
   gradle-6_3 = gradle.gradle-6_3;
   gradle-6_2_2 = gradle.gradle-6_2_2;
   gradle-5_6_4 = gradle.gradle-5_6_4;
