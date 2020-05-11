@@ -18,6 +18,10 @@ in rec {
       runHook postInstall
     '';
 
+    installCheckPhase = ''
+      $out/bin/mn --version 2>&1 | grep -q "${version}"
+    '';
+
     meta = with stdenv.lib; {
       description = "Modern, JVM-based, full-stack framework for building microservice applications";
       longDescription = ''
