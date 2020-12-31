@@ -53,16 +53,6 @@ in rec {
     then callPackage adoptopenjdk-bin-8-packages-linux.jre-openj9 {}
     else callPackage adoptopenjdk-bin-8-packages-darwin.jre-openj9 {};
 
-  adoptopenjdk-hotspot-bin-9 = if stdenv.isLinux
-    then callPackage adoptopenjdk-bin-9-packages-linux.jdk-hotspot {}
-    else callPackage adoptopenjdk-bin-9-packages-darwin.jdk-hotspot {};
-  adoptopenjdk-jre-hotspot-bin-9 = if stdenv.isLinux
-    then callPackage adoptopenjdk-bin-9-packages-linux.jre-hotspot {}
-    else callPackage adoptopenjdk-bin-9-packages-darwin.jre-hotspot {};
-  adoptopenjdk-openj9-bin-9 = if stdenv.isLinux
-    then callPackage adoptopenjdk-bin-9-packages-linux.jdk-openj9 {}
-    else callPackage adoptopenjdk-bin-9-packages-darwin.jdk-openj9 {};
-
   adoptopenjdk-hotspot-bin-10 = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-10-packages-linux.jdk-hotspot {}
     else callPackage adoptopenjdk-bin-10-packages-darwin.jdk-hotspot {};
