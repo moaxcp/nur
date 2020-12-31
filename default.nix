@@ -59,9 +59,6 @@ in rec {
   adoptopenjdk-jre-hotspot-bin-10 = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-10-packages-linux.jre-hotspot {}
     else callPackage adoptopenjdk-bin-10-packages-darwin.jre-hotspot {};
-  adoptopenjdk-openj9-bin-10 = if stdenv.isLinux
-    then callPackage adoptopenjdk-bin-10-packages-linux.jdk-openj9 {}
-    else callPackage adoptopenjdk-bin-10-packages-darwin.jdk-openj9 {};
 
   adoptopenjdk-hotspot-bin-11 = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-11-packages-linux.jdk-hotspot {}
