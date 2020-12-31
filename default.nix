@@ -62,9 +62,6 @@ in rec {
   adoptopenjdk-openj9-bin-9 = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-9-packages-linux.jdk-openj9 {}
     else callPackage adoptopenjdk-bin-9-packages-darwin.jdk-openj9 {};
-  adoptopenjdk-jre-openj9-bin-9 = if stdenv.isLinux
-    then callPackage adoptopenjdk-bin-9-packages-linux.jre-openj9 {}
-    else callPackage adoptopenjdk-bin-9-packages-darwin.jre-openj9 {};
 
   adoptopenjdk-hotspot-bin-10 = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-10-packages-linux.jdk-hotspot {}
@@ -75,9 +72,6 @@ in rec {
   adoptopenjdk-openj9-bin-10 = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-10-packages-linux.jdk-openj9 {}
     else callPackage adoptopenjdk-bin-10-packages-darwin.jdk-openj9 {};
-  adoptopenjdk-jre-openj9-bin-10 = if stdenv.isLinux
-    then callPackage adoptopenjdk-bin-10-packages-linux.jre-openj9 {}
-    else callPackage adoptopenjdk-bin-10-packages-darwin.jre-openj9 {};
 
   adoptopenjdk-hotspot-bin-11 = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-11-packages-linux.jdk-hotspot {}
@@ -144,18 +138,12 @@ in rec {
     then callPackage adoptopenjdk-bin-15-packages-linux.jre-openj9 {}
     else callPackage adoptopenjdk-bin-15-packages-darwin.jre-openj9 {};
 
-  adoptopenjdk-hotspot-bin-16 = if stdenv.isLinux
+  adoptopenjdk-hotspot-bin-16-nightly = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-16-packages-linux.jdk-hotspot {}
     else callPackage adoptopenjdk-bin-16-packages-darwin.jdk-hotspot {};
-  adoptopenjdk-jre-hotspot-bin-16 = if stdenv.isLinux
+  adoptopenjdk-jre-hotspot-bin-16-nightly = if stdenv.isLinux
     then callPackage adoptopenjdk-bin-16-packages-linux.jre-hotspot {}
     else callPackage adoptopenjdk-bin-16-packages-darwin.jre-hotspot {};
-  adoptopenjdk-openj9-bin-16 = if stdenv.isLinux
-    then callPackage adoptopenjdk-bin-16-packages-linux.jdk-openj9 {}
-    else callPackage adoptopenjdk-bin-16-packages-darwin.jdk-openj9 {};
-  adoptopenjdk-jre-openj9-bin-16 = if stdenv.isLinux
-    then callPackage adoptopenjdk-bin-16-packages-linux.jre-openj9 {}
-    else callPackage adoptopenjdk-bin-16-packages-darwin.jre-openj9 {};
 
   gradle-4_10_3 = gradlePkgs.gradle-4_10_3;
   gradle-5_6_4 = gradlePkgs.gradle-5_6_4;
